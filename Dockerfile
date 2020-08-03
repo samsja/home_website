@@ -1,6 +1,10 @@
-FROM python:3.8-slim-buster
+#FROM python:3.8-slim-buster
+FROM arm64v8/python:3.8-slim-buster
+#FROM balenalib/raspberry-pi-debian-python:latest
+
 
 WORKDIR /app
+
 
 
 RUN useradd -s /bin/bash -d /app samsja \
