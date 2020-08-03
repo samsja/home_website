@@ -11,9 +11,11 @@ RUN useradd -s /bin/bash -d /app samsja \
 
 
 COPY requirement.txt requirement.txt
-COPY src src
 
 RUN pip install -r requirement.txt
+
+COPY src src
+
 
 USER samsja
 
@@ -23,4 +25,4 @@ EXPOSE 5000
 
 ENV NB_WORKERS=1
 
-CMD  gunicorn -t 300 -b :5000 -w $NB_WORKERS src.app:app  
+CMD  gunicorn -t 300 -b :5000 -w $NB_WORKERS src.app:app
